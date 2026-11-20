@@ -13,8 +13,7 @@ import {
   Sparkles,
 } from 'lucide-react'
 
-// Sample conversation examples to show how ShopMate works in the store
-
+// Sample conversation examples to show how StoreMate works in the store
 const EXAMPLES = [
   {
     id: 'find',
@@ -115,13 +114,13 @@ export default function IntroducingSection() {
 
           {/* Main Section Heading */}
           <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            Meet <span className="text-[#b4ff39] text-glow-lime">ShopMate.</span>
+            Meet <span className="text-[#b4ff39] text-glow-lime">StoreMate.</span>
           </h2>
 
-          {/* Short description about how ShopMate works */}
+          {/* Short description about how StoreMate works */}
           <p className="mt-4 max-w-md text-base leading-relaxed text-white/70">
             Scan the shop’s QR code or use the in-store screen to ask a question in{' '}
-            <span className="font-medium text-white">Sinhala or English</span>. ShopMate shows you
+            <span className="font-medium text-white">Sinhala or English</span>. StoreMate shows you
             the right shelf, checks what’s in stock, or calls the store team for you.
           </p>
 
@@ -251,7 +250,7 @@ export default function IntroducingSection() {
             {/* Floating Robot Image */}
             <motion.img
               src="/images/rovix-waving.png"
-              alt="ShopMate Robot"
+              alt="StoreMate Robot"
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
               className="absolute top-1 left-1/2 w-[275px] -translate-x-1/2 select-none sm:w-[325px]"
@@ -287,7 +286,7 @@ export default function IntroducingSection() {
                 </div>
 
                 <span className="font-mono text-[10px] uppercase tracking-wider text-white/80">
-                  ShopMate Live
+                  StoreMate Live
                 </span>
               </div>
             </div>
@@ -314,11 +313,11 @@ export default function IntroducingSection() {
                   </div>
                 </div>
 
-                {/* 2. ShopMate AI Answer Bubble */}
+                {/* 2. StoreMate AI Answer Bubble */}
                 <div className="max-w-[46ch] justify-self-start">
                   {/* Robot Name + Fast Thinking Text */}
                   <div className="mb-1.5 flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-[#b4ff39]">
-                    <span>ShopMate</span>
+                    <span>StoreMate</span>
                     <span className="rounded-full bg-[#b4ff39]/10 px-2 py-0.5 text-[10px] font-normal normal-case text-[#b4ff39]/80">
                       {currentText.thinking}
                     </span>
@@ -349,4 +348,3 @@ export default function IntroducingSection() {
     </section>
   )
 }
-
