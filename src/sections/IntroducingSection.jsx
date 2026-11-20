@@ -14,6 +14,7 @@ import {
 } from 'lucide-react'
 
 // Sample conversation examples to show how ShopMate works in the store
+
 const EXAMPLES = [
   {
     id: 'find',
