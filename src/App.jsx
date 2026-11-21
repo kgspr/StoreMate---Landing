@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { RovixMark } from './sections/SectionUtils'
 import HeroSection from './sections/HeroSection'
-import WhyWorkSection from './sections/WhyWorkSection'
+import FeaturesSection from './sections/FeaturesSection'
 import IntroducingSection from './sections/IntroducingSection'
-import SmartFeaturesSection from './sections/SmartFeaturesSection'
-import ModelsSection from './sections/ModelsSection'
+import MockupSection from './sections/MockupSection'
+import TeamSection from './sections/TeamSection'
 import FooterSection from './sections/FooterSection'
 import OrderModal from './sections/OrderModal'
 
@@ -49,16 +49,16 @@ export default function App() {
         </div>
       </header>
 
-      {/* 1 - Pramuditha */}
+      {/* 1 - (20241465) Pramuditha */}
       <HeroSection onOpenOrder={() => setOrderModalOpen(true)} />
-      {/* 2 */}
-      <WhyWorkSection />
-      {/* 3 */}
+      {/* 2 - (20241616) Tinura*/}
+      <FeaturesSection />
+      {/* 3 - (20241355) Asiri*/}
       <IntroducingSection activeSpec={activeSpec} setActiveSpec={setActiveSpec} />
-      {/* 4 */}
-      <SmartFeaturesSection />
-      {/* 5 */}
-      <ModelsSection activeModelIdx={activeModelIdx} setActiveModelIdx={setActiveModelIdx} />
+      {/* 4 - (20241623) Sandali*/}
+      <MockupSection />
+      {/* 5 - (20240094) Sahan*/}
+      <TeamSection activeModelIdx={activeModelIdx} setActiveModelIdx={setActiveModelIdx} />
       
       
       
