@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { RovixMark } from './SectionUtils'
+import { Logo } from './SectionUtils'
 
 export default function FooterSection({ onOpenOrder }) {
   return (
@@ -106,7 +106,7 @@ export default function FooterSection({ onOpenOrder }) {
               className="absolute -right-6 sm:-right-12 bottom-12 w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-[#b4ff39] shadow-[0_0_50px_rgba(180,255,57,0.45)] flex items-center justify-center rotate-[-8deg] z-30 cursor-pointer"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
-              <RovixMark className="w-11 h-9 sm:w-14 sm:h-11 text-[#0a0c09]" />
+              <Logo className="w-11 h-9 sm:w-14 sm:h-11 text-[#0a0c09]" />
             </motion.div>
           </motion.div>
 

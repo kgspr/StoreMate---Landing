@@ -97,7 +97,7 @@ const ICON_MAP = {
 
 export default function WhyWorkSection() {
   return (
-    <section id="why-us" className="py-10 md:py-16 px-4 sm:px-8">
+    <section id="features" className="py-10 md:py-16 px-4 sm:px-8">
       <motion.div
         initial={{ opacity: 0, y: 35 }}
         whileInView={{ opacity: 1, y: 0 }}

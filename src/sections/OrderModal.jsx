@@ -2,7 +2,7 @@ import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Check } from 'lucide-react'
 import { ROBOT_MODELS } from './sectionData'
-import { RovixMark } from './SectionUtils'
+import { Logo } from './SectionUtils'
 
 export default function OrderModal({
   isOpen,
@@ -38,7 +38,7 @@ export default function OrderModal({
 
             <div className="flex items-center gap-2.5 mb-4">
               <div className="w-9 h-9 rounded-full bg-[#b4ff39] flex items-center justify-center">
-                <RovixMark className="w-5 h-4 text-black" />
+                <Logo className="w-5 h-4 text-black" />
               </div>
               <div>
                 <span className="text-[10px] font-mono uppercase tracking-widest text-[#b4ff39] block">
