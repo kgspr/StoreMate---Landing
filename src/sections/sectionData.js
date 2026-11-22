@@ -85,3 +85,41 @@ export const SMART_FEATURES = [
     tall: false,
   },
 ]
+
+export const ROBOT_MODELS = [
+  {
+    id: 'rovix-lite',
+    name: 'ROVIX MINI S1',
+    role: 'Compact Desk Companion',
+    scale: 0.72,
+    hue: 'hue-rotate-[-15deg] brightness-90',
+  },
+  {
+    id: 'rovix-home',
+    name: 'ROVIX HOME X2',
+    role: 'Domestic Care & Security',
+    scale: 0.85,
+    hue: 'brightness-95',
+  },
+  {
+    id: 'rovix-prime',
+    name: 'ROVIX PRIME AI',
+    role: 'Flagship Autonomous Companion',
+    scale: 1,
+    hue: '',
+  },
+  {
+    id: 'rovix-studio',
+    name: 'ROVIX PRO STUDIO',
+    role: 'Creative & Executive Assistant',
+    scale: 0.85,
+    hue: 'hue-rotate-[12deg] brightness-95',
+  },
+  {
+    id: 'rovix-guard',
+    name: 'ROVIX SENTINEL',
+    role: '24/7 Perimeter & Patrol Unit',
+    scale: 0.72,
+    hue: 'hue-rotate-[25deg] brightness-90',
+  },
+]
