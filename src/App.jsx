@@ -13,10 +13,19 @@ export default function App() {
   const [activeModelIdx, setActiveModelIdx] = useState(2)
   const [orderModalOpen, setOrderModalOpen] = useState(false)
   const [orderSubmitted, setOrderSubmitted] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  React.useEffect(() => {
+    const updateHeader = () => setIsScrolled(window.scrollY > 16)
+
+    updateHeader()
+    window.addEventListener('scroll', updateHeader, { passive: true })
+    return () => window.removeEventListener('scroll', updateHeader)
+  }, [])
 
   return (
     <div className="min-h-screen bg-[#0a0c09] text-white relative selection:bg-[#b4ff39] selection:text-black">
-      <header className="sticky top-0 z-50 backdrop-blur-xl bg-[#0a0c09]/80 border-b border-white/[0.04]">
+      <header className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${isScrolled ? 'bg-[#0a0c09]/65 backdrop-blur-xl border-white/[0.06]' : 'bg-transparent backdrop-blur-0 border-transparent'}`}>
         <div className="max-w-[1160px] mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
           <a href="#home" className="flex items-center gap-2.5 group">
             <Logo className="w-7 h-5 text-[#b4ff39] transition-transform duration-300 group-hover:scale-110" />
