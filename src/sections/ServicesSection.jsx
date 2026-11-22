@@ -1,8 +1,31 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { SMART_FEATURES } from './sectionData'
 
 export default function SmartFeaturesSection() {
+const SMART_FEATURES = [
+  {
+    image: '/images/service-1.jpeg',
+    title1: 'Interactive AI',
+    title2: 'In-Store Kiosks',
+    desc: 'Instant product search, live stock checks, and personalized recommendations right in the aisle.',
+    tall: false,
+  },
+  {
+    image: '/images/service-2.jpeg',
+    title1: 'Visual AI',
+    title2: 'Shopping Assistant',
+    desc: 'Point a smartphone camera at any item to compare specs, ask questions, and get real-time answers.',
+    tall: true,
+  },
+  {
+    image: '/images/service-3.jpeg',
+    title1: 'Autonomous',
+    title2: 'Aisle Guides',
+    desc: 'Friendly in-store robots that greet shoppers and escort them directly to the products they need.',
+    tall: false,
+  },
+]
+
   return (
     <section id="services" className="py-16 md:py-24">
       <div className="max-w-[1120px] mx-auto px-5 sm:px-8">
@@ -14,10 +37,10 @@ export default function SmartFeaturesSection() {
           className="text-center mb-12 md:mb-16"
         >
           <h2 className="font-display text-3xl sm:text-4xl md:text-[42px] uppercase leading-[1.1] tracking-tight">
-            <span className="font-bold block text-white">SMART FEATURES</span>
+            <span className="font-bold block text-[#b4ff39] text-4xl sm:text-[48px] md:text-[64px]">RETAIL</span>
             <span className="block mt-1">
-              <span className="font-bold text-white">AT </span>
-              <span className="font-light italic text-white/80">A GLANCE</span>
+              <span className="font-bold text-white">Re-</span>
+              <span className="font-light italic text-white/80">Designed</span>
             </span>
           </h2>
         </motion.div>
