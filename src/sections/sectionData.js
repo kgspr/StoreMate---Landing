@@ -64,21 +64,21 @@ export const INTRO_SPECS = [
 
 export const SMART_FEATURES = [
   {
-    image: '/images/feature-mobility.jpg',
+    image: '/images/service-1.jpeg',
     title1: 'Engineered for',
     title2: 'Enhanced Mobility',
     desc: 'Equipped with 18-DOF gyroscopic balance actuators to glide across carpets, thresholds, and stairs silently.',
     tall: false,
   },
   {
-    image: '/images/feature-precision.jpg',
+    image: '/images/service-2.jpeg',
     title1: 'Intelligent Process',
     title2: 'Optimizer',
     desc: 'Seamlessly bridges digital and physical workflows—organizing schedules, drafting reports, and managing desk tasks.',
     tall: true,
   },
   {
-    image: '/images/feature-movements.jpg',
+    image: '/images/service-3.jpeg',
     title1: 'Advanced Human-Like',
     title2: 'Movements',
     desc: 'Tactile force-feedback fingertips handle delicate fabrics, glassware, and household chores with gentle precision.',

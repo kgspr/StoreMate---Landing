@@ -1,7 +1,6 @@
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Check } from 'lucide-react'
-import { ROBOT_MODELS } from './sectionData'
 import { Logo } from './SectionUtils'
 
 export default function OrderModal({
@@ -56,7 +55,7 @@ export default function OrderModal({
                 <h4 className="font-display font-bold text-lg text-white">Reservation Confirmed!</h4>
                 <p className="text-xs text-white/60 mt-1.5 max-w-xs mx-auto">
                   Your priority build slot for{' '}
-                  <span className="text-[#b4ff39]">{ROBOT_MODELS[activeModelIdx].name}</span>{' '}
+                  {/* <span className="text-[#b4ff39]">{ROBOT_MODELS[activeModelIdx].name}</span>{' '} */}
                   has been registered.
                 </p>
                 <button
@@ -86,11 +85,11 @@ export default function OrderModal({
                     onChange={(e) => setActiveModelIdx(Number(e.target.value))}
                     className="w-full rounded-xl bg-[#0b0e0a] border border-white/10 px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#b4ff39]"
                   >
-                    {ROBOT_MODELS.map((m, idx) => (
+                    {/* {ROBOT_MODELS.map((m, idx) => (
                       <option key={m.id} value={idx}>
                         {m.name} — {m.role}
                       </option>
-                    ))}
+                    ))} */}
                   </select>
                 </div>
 

@@ -1,11 +1,123 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import { Logo } from './SectionUtils'
 
 export default function HeroSection({ onOpenOrder }) {
+  const matrixCanvasRef = useRef(null)
+
+  useEffect(() => {
+    const canvas = matrixCanvasRef.current
+    if (!canvas) return
+
+    const context = canvas.getContext('2d')
+    let animationFrameId
+    let columns = []
+    let fontSize = 16
+    let columnGap = 26
+    let rowGap = 24
+    let pointer = null
+
+    const updatePointer = (event) => {
+      const rect = canvas.getBoundingClientRect()
+      const x = event.clientX - rect.left
+      const y = event.clientY - rect.top
+      pointer = x >= 0 && x <= rect.width && y >= 0 && y <= rect.height
+        ? { x, y }
+        : null
+    }
+
+    const clearPointer = (event) => {
+      if (!event.relatedTarget) pointer = null
+    }
+
+    const resizeCanvas = () => {
+      const rect = canvas.getBoundingClientRect()
+      const pixelRatio = window.devicePixelRatio || 1
+
+      canvas.width = rect.width * pixelRatio
+      canvas.height = rect.height * pixelRatio
+      context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0)
+
+      const width = rect.width
+      const height = rect.height
+      fontSize = width < 640 ? 12 : 16
+      columnGap = fontSize * 1.7
+      rowGap = fontSize * 1.55
+      const columnCount = Math.ceil(width / columnGap)
+      columns = Array.from({ length: columnCount }, (_, index) => ({
+        x: index * columnGap + columnGap / 2,
+        y: Math.random() * -height,
+        speed: 1.8 + Math.random() * 4,
+        length: 8 + Math.floor(Math.random() * 18),
+        opacity: 0.18 + Math.random() * 0.52,
+      }))
+    }
+
+    const draw = () => {
+      const rect = canvas.getBoundingClientRect()
+
+      context.fillStyle = 'rgba(10, 12, 9, 0.13)'
+      context.fillRect(0, 0, rect.width, rect.height)
+      context.font = `500 ${fontSize}px monospace`
+      context.textAlign = 'center'
+
+      columns.forEach((column) => {
+        for (let trail = 0; trail < column.length; trail += 1) {
+          const char = Math.random() > 0.5 ? '1' : '0'
+          const y = column.y - trail * rowGap
+          if (y < 0 || y > rect.height) continue
+
+          const fade = 1 - trail / column.length
+          context.fillStyle = trail === 0
+            ? `rgba(206, 255, 121, ${column.opacity})`
+            : `rgba(62, 202, 117, ${column.opacity * fade})`
+
+          const distance = pointer
+            ? Math.hypot(pointer.x - column.x, pointer.y - y)
+            : Infinity
+          const proximity = Math.max(0, 1 - distance / 125)
+          const scale = 1 + proximity * proximity * 1.8
+          context.save()
+          context.translate(column.x, y)
+          context.scale(scale, scale)
+          context.fillText(char, 0, 0)
+          context.restore()
+        }
+
+        column.y += column.speed
+        if (column.y - column.length * rowGap > rect.height) {
+          column.y = Math.random() * -250
+          column.speed = 1.8 + Math.random() * 4
+          column.length = 8 + Math.floor(Math.random() * 18)
+          column.opacity = 0.18 + Math.random() * 0.52
+        }
+      })
+
+      animationFrameId = requestAnimationFrame(draw)
+    }
+
+    resizeCanvas()
+    draw()
+    window.addEventListener('resize', resizeCanvas)
+    window.addEventListener('pointermove', updatePointer)
+    window.addEventListener('pointerout', clearPointer)
+
+    return () => {
+      cancelAnimationFrame(animationFrameId)
+      window.removeEventListener('resize', resizeCanvas)
+      window.removeEventListener('pointermove', updatePointer)
+      window.removeEventListener('pointerout', clearPointer)
+    }
+  }, [])
+
   return (
     <section id="home" className="relative pt-4 md:pt-8 overflow-hidden">
+      <canvas
+        ref={matrixCanvasRef}
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 h-full w-full opacity-80"
+      />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute top-[18%] right-[-5%] w-[460px] h-[460px] md:w-[680px] md:h-[580px] rounded-full bg-gradient-to-tr from-[#5d9f18]/45 via-[#8ee02c]/35 to-transparent blur-[110px]"
@@ -15,7 +127,7 @@ export default function HeroSection({ onOpenOrder }) {
         className="pointer-events-none absolute bottom-[4%] left-[25%] w-[520px] h-[280px] rounded-full bg-[#7bd424]/25 blur-[100px]"
       />
 
-      <div className="max-w-[100%] md:max-w-[calc(100vw-150px)] mx-auto relative">
+      <div className="max-w-[100%] md:max-w-[calc(100vw-150px)] mx-auto relative z-10 pt-30">
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-6 lg:gap-0 min-h-[560px] md:min-h-[640px]">
           <div className="lg:col-span-6 relative flex justify-center lg:justify-start items-end order-2 lg:order-1 mt-4 lg:mt-0">
             <motion.div
@@ -47,7 +159,7 @@ export default function HeroSection({ onOpenOrder }) {
             </motion.div>
           </div>
 
-          <div className="lg:col-span-6 flex flex-col justify-between z-20 order-1 lg:order-2 lg:-ml-10 px-6 md:px-16">
+          <div className="lg:col-span-6 flex flex-col justify-between z-20 order-1 lg:order-2 lg:-ml-10 px-6 md:px-16 -mt-5 md:-mt-20">
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}

@@ -1,6 +1,5 @@
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ROBOT_MODELS } from './sectionData'
 
 export default function ModelsSection({ activeModelIdx, setActiveModelIdx }) {
   const getOrderedModels = () => {
@@ -11,6 +10,44 @@ export default function ModelsSection({ activeModelIdx, setActiveModelIdx }) {
       return { ...ROBOT_MODELS[idx], originalIdx: idx, offset }
     })
   }
+
+  const ROBOT_MODELS = [
+  {
+    id: 'team-sahan',
+    name: 'Sahan Fernando',
+    role: 'AI Automation & Quality Assurance',
+    scale: 0.72,
+    hue: 'hue-rotate-[-15deg] brightness-90',
+  },
+  {
+    id: 'team-shanuka',
+    name: 'Shanuka Pramuditha',
+    role: 'Systems Architect & UI/UX Designer',
+    scale: 1,
+    hue: '',
+  },
+  {
+    id: 'team-tinura',
+    name: 'Tinura Dissanayaka',
+    role: 'Team Leader',
+    scale: 0.85,
+    hue: 'brightness-95',
+  },
+  {
+    id: 'team-asiri',
+    name: 'Asiri Madhusanka',
+    role: 'Creative & Executive Assistant',
+    scale: 0.85,
+    hue: 'hue-rotate-[12deg] brightness-95',
+  },
+  {
+    id: 'team-sandali',
+    name: 'Sandali Damdini',
+    role: 'Quality Assurance & DevOps',
+    scale: 0.72,
+    hue: 'hue-rotate-[25deg] brightness-90',
+  },
+]
 
   return (
     <section id="models" className="py-16 md:py-24 overflow-hidden relative">
