@@ -94,7 +94,7 @@ export default function IntroducingSection() {
   const isSupportCall = currentExample.id === 'support'
 
   return (
-    <section id="introducing" className="relative overflow-hidden py-16 md:py-24">
+    <section id="solution" className="relative overflow-hidden py-16 md:py-24">
       {/* Background green glow effect */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-[420px] w-[760px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#b4ff39]/5 blur-[130px]" />
 
