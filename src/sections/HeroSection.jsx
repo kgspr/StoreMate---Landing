@@ -74,7 +74,7 @@ export default function HeroSection({ onOpenOrder }) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.5 }}
               >
-                
+
 <button className="mt-8 lg:mt-12 self-end w-full sm:w-[200px] text-center rounded-2xl p-5 backdrop-blur-xl bg-white text-black border border-white/[0.12] shadow-[0_20px_50px_rgba(255,255,255,0.05)] hover:shadow-[0_20px_50px_rgba(255,255,255,0.45)] hover:border-[#b4ff39]/40 transition-all duration-300 ease-out group cursor-pointer">
   Join <b>WaitList {'->'}</b>
 </button>
