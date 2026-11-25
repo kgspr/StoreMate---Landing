@@ -15,12 +15,16 @@
     overflow-x: hidden;
   }
 
+  section[id], footer[id], #privacy {
+    scroll-margin-top: 5.5rem;
+  }
+
   h1, h2, h3, .font-display {
     font-family: 'Space Grotesk', 'Inter', sans-serif;
   }
 }
 
-/* Custom utility styles matching the Rovix industrial cybernetic aesthetic */
+/* Custom utility styles matching the StoreMate industrial cybernetic aesthetic */
 .text-glow-lime {
   text-shadow: 0 0 25px rgba(180, 255, 57, 0.45);
 }

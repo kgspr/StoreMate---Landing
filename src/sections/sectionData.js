@@ -50,7 +50,7 @@ export const INTRO_SPECS = [
   },
   {
     title: 'Modular Architecture for Endless',
-    desc: 'Hot-swappable sensory pods and limb attachments let you customize Rovix for home care, studio workflows, or security.',
+    desc: 'Hot-swappable sensory pods and limb attachments let you customize StoreMate for home care, studio workflows, or security.',
   },
   {
     title: 'Intelligent Home Companion',
@@ -88,36 +88,36 @@ export const SMART_FEATURES = [
 
 export const ROBOT_MODELS = [
   {
-    id: 'rovix-lite',
-    name: 'ROVIX MINI S1',
+    id: 'StoreMate-lite',
+    name: 'StoreMate MINI S1',
     role: 'Compact Desk Companion',
     scale: 0.72,
     hue: 'hue-rotate-[-15deg] brightness-90',
   },
   {
-    id: 'rovix-home',
-    name: 'ROVIX HOME X2',
+    id: 'StoreMate-home',
+    name: 'StoreMate HOME X2',
     role: 'Domestic Care & Security',
     scale: 0.85,
     hue: 'brightness-95',
   },
   {
-    id: 'rovix-prime',
-    name: 'ROVIX PRIME AI',
+    id: 'StoreMate-prime',
+    name: 'StoreMate PRIME AI',
     role: 'Flagship Autonomous Companion',
     scale: 1,
     hue: '',
   },
   {
-    id: 'rovix-studio',
-    name: 'ROVIX PRO STUDIO',
+    id: 'StoreMate-studio',
+    name: 'StoreMate PRO STUDIO',
     role: 'Creative & Executive Assistant',
     scale: 0.85,
     hue: 'hue-rotate-[12deg] brightness-95',
   },
   {
-    id: 'rovix-guard',
-    name: 'ROVIX SENTINEL',
+    id: 'StoreMate-guard',
+    name: 'StoreMate SENTINEL',
     role: '24/7 Perimeter & Patrol Unit',
     scale: 0.72,
     hue: 'hue-rotate-[25deg] brightness-90',

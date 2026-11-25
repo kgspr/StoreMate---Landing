@@ -249,7 +249,7 @@ export default function IntroducingSection() {
 
             {/* Floating Robot Image */}
             <motion.img
-              src="/images/rovix-waving.png"
+              src="/images/storemate-waving.png"
               alt="StoreMate Robot"
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
