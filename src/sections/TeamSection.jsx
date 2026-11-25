@@ -97,7 +97,7 @@ export default function ModelsSection({ activeModelIdx, setActiveModelIdx }) {
                   <img
                     src={`/images/${model.id}.jpg`}
                     onError={(e) => {
-                      e.currentTarget.src = isCenter ? '/images/rovix-waving.jpg' : '/images/rovix-hero.jpg'
+                      e.currentTarget.src = isCenter ? '/images/StoreMate-waving.jpg' : '/images/StoreMate-hero.jpg'
                     }}
                     alt={model.name}
                     className={`absolute inset-0 z-10 h-full w-full select-none pointer-events-none rounded-full object-cover object-center transition-all duration-500 ${
