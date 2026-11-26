@@ -42,10 +42,10 @@ export default function FooterSection({ onOpenOrder, onOpenPrivacy }) {
                 SOCIAL MEDIA
               </h4>
               <div className="flex gap-3">
-                <a href={"https://bit.ly/4tgiZIM"} target="_blank" rel="noreferrer" aria-label="StoreMate on Instagram" className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 text-white/60 transition hover:border-[#b4ff39]/50 hover:text-[#b4ff39]">
+                <a href={"https://www.instagram.com/storem8.lk?cnvx=MWY2c250aTA2Zjh0dg%3D%3D&utm_source=qr"} target="_blank" rel="noreferrer" aria-label="StoreMate on Instagram" className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 text-white/60 transition hover:border-[#b4ff39]/50 hover:text-[#b4ff39]">
                   <Instagram size={16} />
                 </a>
-                <a href={"https://bit.ly/4tgOWAM"} target="_blank" rel="noreferrer" aria-label="StoreMate on YouTube" className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 text-white/60 transition hover:border-[#b4ff39]/50 hover:text-[#b4ff39]">
+                <a href={"https://youtube.com/@storem8-j8w?si=SN1EP_76ZGzv3MPb"} target="_blank" rel="noreferrer" aria-label="StoreMate on YouTube" className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 text-white/60 transition hover:border-[#b4ff39]/50 hover:text-[#b4ff39]">
                   <Youtube size={17} />
                 </a>
               </div>
